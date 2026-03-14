@@ -125,7 +125,7 @@
             
             </div>
                <div class="pt-6 flex flex-col-reverse sm:flex-row justify-end gap-3">
-                <a href="<?= WEBROOT ?>?page=listtaches" 
+                <a href="<?= WEBROOT ?>?page=supprimer&id=<?= $tache['id'] ?>" 
                    class="bg-red-100 w-full sm:w-auto text-center px-8 py-3.5 text-gray-600 font-semibold hover:bg-red-500 text-white rounded-xl transition-all">
                     Supprimer
                 </a>

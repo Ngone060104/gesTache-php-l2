@@ -77,7 +77,7 @@
                         <i class="fas fa-filter mr-2"></i> Filtrer
                     </button>
                 </div>
-
+                
                 <!-- Table Container -->
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                     <div class="overflow-x-auto">
@@ -105,8 +105,8 @@
                                     <td class="px-6 py-4 text-right">
                                         <div class="flex justify-end gap-2">
                                             <a href="<?=WEBROOT?>?page=detail&id=<?= $tache['id'] ?>" class="p-2 text-blue-500 hover:bg-blue-50 rounded-lg transition" title="Voir"><i class="fas fa-eye"></i></a>
-                                            <a href="#" class="p-2 text-green-500 hover:bg-green-50 rounded-lg transition" title="Terminer"><i class="fas fa-check"></i></a>
-                                            <a href="#" class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition" title="Supprimer"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="p-2 text-green-500 hover:bg-green-50 rounded-lg transition" title="Terminer"><i class="fas fa-check"></i></a>
+                                            <a href="<?= WEBROOT ?>?page=supprimer&id=<?= $tache['id'] ?>" class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition" title="Supprimer"><i class="fas fa-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
