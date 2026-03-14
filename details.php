@@ -114,15 +114,15 @@
             </div>
 
             <!-- Pied de fiche (Actions) -->
-            <div class="pt-6 border-t border-gray-100 flex gap-3">
-                <button class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-blue-100">
-                    <i class="fas fa-edit mr-2"></i> Modifier
-                </button>
-                <a href="<?= WEBROOT ?>?page=delete&id=<?= $tache['id'] ?>" 
-                   onclick="return confirm('Supprimer cette tâche ?')"
-                   class="px-6 py-3 border border-red-200 text-red-600 hover:bg-red-50 font-bold rounded-xl transition text-center">
-                    <i class="fas fa-trash"></i>
-                </a>
+            <div class="pt-6 border-t border-gray-100 flex gap-3 ">
+                 <!-- Description -->
+            <div class="w-full">
+                <h3 class="text-sm font-semibold text-gray-400 uppercase mb-2">Etat</h3>
+                <p class="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    <?= $tache['etat'] ?>
+                </p>
+            </div>
+            
             </div>
         </div>
     </div>
