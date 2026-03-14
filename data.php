@@ -1,5 +1,7 @@
 <?php
 session_start();
+// session_unset();
+// session_destroy();
 if (!isset($_SESSION['taches'])) {
     $_SESSION['taches'] =[
     [
@@ -60,7 +62,7 @@ function addTache(array $tache) :void{
 
 function getTachesByStatut($etat){
     $taches=getAllTaches();
-    return array_filter($taches,fn($t)=>$t['statut']==$etat);
+    return array_filter($taches,fn($t)=>$t['etat']==$etat);
 }
 
 function deleteTache(int $id):void{
