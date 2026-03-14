@@ -34,7 +34,8 @@ if(isset($_POST["ajouter"])):
             "date_echeance" => $_POST['date_echeance'],
             "etat" => "en attente",
         ];
-       $_SESSION["taches"][]=$newTache;
+        addTache($newTache);
+    //    $_SESSION["taches"][]=$newTache;
         header("Location:".WEBROOT."?page=listtaches");
         exit(); 
     }
