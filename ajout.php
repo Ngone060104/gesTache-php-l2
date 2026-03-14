@@ -40,11 +40,11 @@ require_once("data.php");
             </nav>
         </aside>
         <!-- div_main -->
-       <!-- div_main -->
-<div class="w-full bg-gray-50 overflow-y-auto">
+       <!-- div_main --><!-- div_main -->
+<div class="flex-1 bg-gray-50 overflow-y-auto px-4 pb-10"> <!-- Ajout de padding latéral pour mobile -->
     <!-- Header discret -->
-    <div class="p-4 m-2 bg-white shadow-sm border border-gray-200 rounded-xl flex items-center">
-        <div class="relative w-full max-w-md">
+    <div class="p-4 my-4 bg-white shadow-sm border border-gray-200 rounded-xl flex items-center max-w-3xl mx-auto">
+        <div class="relative w-full">
             <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
                 <i class="fas fa-search"></i>
             </span>
@@ -53,23 +53,24 @@ require_once("data.php");
     </div>
 
     <!-- Formulaire d'Ajout -->
-    <div class="max-w-3xl mx-auto mt-8 p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+    <!-- max-w-3xl limite la largeur sur PC, p-5 sur mobile et p-8 sur PC -->
+    <div class="max-w-3xl mx-auto p-5 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
         <div class="flex items-center gap-3 mb-8">
-            <div class="bg-blue-100 text-blue-600 p-3 rounded-lg">
+            <div class="bg-blue-100 text-blue-600 p-3 rounded-lg shrink-0">
                 <i class="fas fa-plus-circle text-xl"></i>
             </div>
             <div>
-                <h1 class="text-2xl font-bold text-gray-800">Nouvelle Tâche</h1>
-                <p class="text-sm text-gray-500">Remplissez les détails pour organiser votre travail.</p>
+                <h1 class="text-xl sm:text-2xl font-bold text-gray-800">Nouvelle Tâche</h1>
+                <p class="text-xs sm:text-sm text-gray-500">Remplissez les détails pour organiser votre travail.</p>
             </div>
         </div>
 
-        <form action="<?= WEBROOT ?>?page=ajout" method="POST" class="space-y-6">
+        <form action="<?= WEBROOT ?>?page=ajout" method="POST" class="space-y-5">
             <!-- Titre -->
             <div>
                 <label for="titre" class="block text-sm font-semibold text-gray-700 mb-1">Titre de la tâche</label>
                 <input type="text" id="titre" name="titre" 
-                    class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                    class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-sm sm:text-base"
                     placeholder="Ex: Réunion de projet">
                 <?php if(!empty($errorTitre)): ?>
                     <p class="mt-1 text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-circle"></i> <?= $errorTitre ?></p>
@@ -80,42 +81,42 @@ require_once("data.php");
             <div>
                 <label for="description" class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
                 <textarea id="description" name="description" rows="4"
-                    class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" 
+                    class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-sm sm:text-base" 
                     placeholder="Décrivez les étapes clés..."></textarea>
                 <?php if(!empty($errorDescription)): ?>
                     <p class="mt-1 text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-circle"></i> <?= $errorDescription ?></p>
                 <?php endif; ?>
             </div>
 
-            <!-- Dates -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Dates (Stackées sur mobile, Grille sur PC) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                     <label for="date_creation" class="block text-sm font-semibold text-gray-700 mb-1">Date de début</label>
                     <input type="date" id="date_creation" name="date_creation" 
-                        class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-600">
-                    <?php if(!empty($errorDate_Creation)): ?>
-                        <p class="mt-1 text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-circle"></i><?= $errorDate_Creation ?></p>
-                    <?php endif; ?>
+                        class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-600 text-sm">
                 </div>
                 <div>
                     <label for="date_echeance" class="block text-sm font-semibold text-gray-700 mb-1">Échéance</label>
                     <input type="date" id="date_echeance" name="date_echeance" 
-                        class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-600">
-                    <?php if(!empty($errorDate_Echec)): ?>
-                        <p class="mt-1 text-xs text-red-500 flex items-center gap-1"> <i class="fas fa-exclamation-circle"></i><?= $errorDate_Echec ?></p>
-                    <?php endif; ?>
+                        class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-600 text-sm">
                 </div>
             </div>
 
-            <!-- Bouton -->
-            <div class="pt-4">
+            <!-- Boutons (Empilés sur mobile : flex-col-reverse) -->
+            <div class="pt-6 flex flex-col-reverse sm:flex-row justify-end gap-3">
+                <a href="<?= WEBROOT ?>?page=listtaches" 
+                   class="bg-red-100 w-full sm:w-auto text-center px-8 py-3.5 text-gray-600 font-semibold hover:bg-red-500 text-white rounded-xl transition-all">
+                    Annuler
+                </a>
                 <button type="submit" name="ajouter" 
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-200 transition-all transform hover:-translate-y-0.5 active:scale-95">
+                    class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-8 rounded-xl shadow-lg shadow-blue-200 transition-all transform active:scale-95">
                     Créer la tâche
                 </button>
             </div>
         </form>
     </div>
+</div>
+
 
 </body>
 

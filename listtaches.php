@@ -18,7 +18,7 @@
         <!-- Sidebar - Cachée sur mobile -->
         <aside class="hidden md:flex flex-col w-64 bg-slate-900 text-white transition-all duration-300">
             <div class="p-6">
-                <h2 class="text-2xl font-bold tracking-tight text-blue-400">Gestion des Taches</h2>
+                <h2 class="text-xl font-bold tracking-tight text-blue-400">Gestion des Taches</h2>
             </div>
             <nav class="flex-1 px-4 space-y-2">
                 <a href="<?=WEBROOT?>?page=listtaches" class="flex items-center gap-3 p-3 bg-blue-600 rounded-lg transition">
