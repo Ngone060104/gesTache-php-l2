@@ -50,7 +50,7 @@ function addTache(array $tache) :void{
 
 function getTachesByStatut($etat){
     $taches=getAllTaches();
-    return array_filter($taches,fn(t)=>t['statut']==$etat);
+    return array_filter($taches,fn($t)=>$t['statut']==$etat);
 }
 
 function deleteTache(int $id):void{
@@ -72,6 +72,3 @@ function marquerTerminer(int $id):void{
         }
     }
 }
-function getAllTaches():array{
-    return isset($_SESSION["taches"]) ? $_SESSION["taches"] : [] ;
-}  
