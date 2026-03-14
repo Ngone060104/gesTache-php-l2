@@ -1,1 +1,0 @@
-<h1>Page de la liste</h1>

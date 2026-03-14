@@ -15,9 +15,10 @@ require_once('data.php');
         <a href="<?=WEBROOT?>?page=ajout"> Ajout</a>
     </div>
     <?php
-    $page=$_REQUEST['page']??'liste';
-    if ($page=='liste') {
-        require_once('liste.php');
+    $page=$_REQUEST['page']??'listtaches';
+    if ($page=='listtaches') {
+        $taches = getAllTaches();
+        require_once('listtaches.php');
     } elseif ($page=='ajout') {
         require_once('ajout.php');
     } elseif ($page=='detail') {
@@ -30,6 +31,8 @@ require_once('data.php');
     } else {
         echo "page introuvable";
     }
+
+
     ?>
 </body>
 </html>

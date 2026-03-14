@@ -28,7 +28,6 @@ if (!isset($_SESSION['taches'])) {
         ]
     ];
 }
-
 function getAllTaches():array {
     return $_SESSION['taches'];
 }
@@ -73,3 +72,6 @@ function marquerTerminer(int $id):void{
         }
     }
 }
+function getAllTaches():array{
+    return isset($_SESSION["taches"]) ? $_SESSION["taches"] : [] ;
+}  
