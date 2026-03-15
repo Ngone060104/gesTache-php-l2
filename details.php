@@ -28,10 +28,7 @@
                     <i class="fas fa-list-ul w-5"></i>
                     <span>Mes Tâches</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 p-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg transition">
-                    <i class="fas fa-chart-pie w-5"></i>
-                    <span>Statistiques</span>
-                </a>
+               
             </nav>
         </aside>
 
