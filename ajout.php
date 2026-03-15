@@ -53,7 +53,6 @@ require_once("data.php");
     </div>
 
     <!-- Formulaire d'Ajout -->
-    <!-- max-w-3xl limite la largeur sur PC, p-5 sur mobile et p-8 sur PC -->
     <div class="max-w-3xl mx-auto p-5 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
         <div class="flex items-center gap-3 mb-8">
             <div class="bg-blue-100 text-blue-600 p-3 rounded-lg shrink-0">

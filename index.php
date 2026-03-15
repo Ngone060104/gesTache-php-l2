@@ -32,21 +32,30 @@ require_once('data.php');
         require_once('ajout.php');
     } elseif ($page == 'detail') {
         require_once('details.php');
-        $id = $_REQUEST["id"] ?? 0;
+        // recuperation de l'id dans l'URL
+        $id = $_GET["id"] ?? 0;
         if ($id > 0) {
             deleteTache($id);
         }
         header("Location: " . WEBROOT . "?page=listtaches");
         exit();
     } elseif ($page == 'supprimer') {
-        $id = $_REQUEST["id"] ?? 0;
+         // recuperation de l'id dans l'URL
+        $id = $_GET["id"] ?? 0;
         if ($id > 0) {
             deleteTache($id);
         }
         header("Location: " . WEBROOT . "?page=listtaches");
         exit();
-    } elseif ($page == 'terminer') {
-        echo "terminer";
+    } elseif ($page == 'terminé') {
+        // var_dump($_SESSION['taches']); die();
+          // recuperation de l'id dans l'URL via GET
+        $id = $_GET["id"] ?? 0;
+        if ($id > 0) {
+            marquerTerminer($id);
+        }
+        header("Location: " . WEBROOT . "?page=listtaches");
+        exit();
     } else {
         echo "page introuvable";
     }
