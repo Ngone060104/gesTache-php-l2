@@ -12,10 +12,6 @@ require_once('data.php');
 </head>
 
 <body>
-    <div>
-        <a href="<?= WEBROOT ?>?page=liste"> liste</a>
-        <a href="<?= WEBROOT ?>?page=ajout"> Ajout</a>
-    </div>
     <?php
     $page = $_REQUEST['page'] ?? 'listtaches';
     if ($page == 'listtaches' || $page ==  'filtre') {
